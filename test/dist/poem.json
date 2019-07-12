@@ -2,30 +2,36 @@
     {
         "content": [
             [
-                "I died for beauty, but was scarce",
-                "Adjusted in the tomb,",
-                "When one who died for truth was lain",
-                "In an adjoining room."
+                "Whose woods these are I think I know.",
+                "His house is in the village though;",
+                "He will not see me stopping here",
+                "To watch his woods fill up with snow."
             ],
             [
-                "He questioned softly why I failed?",
-                "&ldquo;For beauty,&rdquo; I replied.",
-                "&ldquo;And I for truth,&mdash;the two are one;",
-                "We brethren are,&rdquo; he said."
+                "My little horse must think it queer",
+                "To stop without a farmhouse near",
+                "Between the woods and frozen lake",
+                "The darkest evening of the year."
             ],
             [
-                "And so, as kinsmen met a night,",
-                "We talked between the rooms,",
-                "Until the moss had reached our lips,",
-                "And covered up our names."
+                "He gives his harness bells a shake",
+                "To ask if there is some mistake.",
+                "The only other sound’s the sweep",
+                "Of easy wind and downy flake."
+            ],
+            [
+                "The woods are lovely, dark and deep,",
+                "But I have promises to keep,",
+                "And miles to go before I sleep,",
+                "And miles to go before I sleep."
             ]
         ],
         "data": {
-            "poet": "Emily Dickinson",
-            "year": 1924,
-            "title": "I died for beauty, but was scarce",
-            "stanzas": 3,
-            "lines": 12
+            "poet": "Robert Frost",
+            "year": 1923,
+            "title": "Stopping by the Woods on a Snowy Evening",
+            "stanzas": 4,
+            "lines": 16
         }
     }
 ]

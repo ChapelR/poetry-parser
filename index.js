@@ -41,7 +41,7 @@ function parseAndSave (input, output) {
 }
 
 module.exports = {
-    fromString : parse,
+    fromString : parsePoetry,
     fromFile : parseFromFile,
     parseAndSave
 };

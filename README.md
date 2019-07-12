@@ -32,9 +32,9 @@ poetry.fromFile(path, json);
 poetry.parseAndSave(path, outputPath);
 ```
 
-`.fromString(string, json)` -> parses poetry from an input string. Returns a JavaScript array or JSON, if the `json` argument is true.
-`.fromFile(path, json)` -> parses poetry from a file or directory. Returns a JavaScript array or JSON, if the `json` argument is true.
-`.parseAndSave(path, outputPath)` -> parses poetry from a file or directory. Saves the JSON data to the indicated `outputPath` file. Returns the data as a JavaScript array. If no output path is provided, the data will get logged to the console.
+- `.fromString(string, json)` -> parses poetry from an input string. Returns a JavaScript array or JSON, if the `json` argument is true.
+- `.fromFile(path, json)` -> parses poetry from a file or directory. Returns a JavaScript array or JSON, if the `json` argument is true.
+- `.parseAndSave(path, outputPath)` -> parses poetry from a file or directory. Saves the JSON data to the indicated `outputPath` file. Returns the data as a JavaScript array. If no output path is provided, the data will get logged to the console.
 
 ## What it does:
 

@@ -14,9 +14,11 @@
     "gray-matter": "^4.0.2",
     "yargs": "^13.2.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  },
   "scripts": {
-    "test": "node test/test.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
