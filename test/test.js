@@ -1,4 +1,4 @@
-/* jshint node: true, mocha: true, esversion: 6 */
+/* jshint mocha: true */
 'use strict';
 const assert = require('assert');
 const main = require('../index.js');

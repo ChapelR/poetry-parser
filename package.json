@@ -15,10 +15,12 @@
     "yargs": "^13.2.4"
   },
   "devDependencies": {
+    "jshint": "^2.10.2",
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "jshint ."
   },
   "repository": {
     "type": "git",
