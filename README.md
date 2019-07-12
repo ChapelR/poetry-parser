@@ -2,6 +2,8 @@
 
 **Warning**: Unfinished.
 
+![](https://api.travis-ci.org/ChapelR/poetry-parser.svg?branch=master) ![](https://img.shields.io/github/package-json/v/chapelr/poetry-parser.svg)
+
 Command line tool for serializing poetry in a simple markup format into JSON data so that you can do weird things with it.
 
 ## Install
