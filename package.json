@@ -1,0 +1,36 @@
+{
+  "name": "poetry-parser",
+  "version": "0.0.1",
+  "description": "Parses poetry to JSON.",
+  "main": "index.js",
+  "bin": {
+    "poetry": "bin/bin.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "fs-jetpack": "^2.2.2",
+    "gray-matter": "^4.0.2",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChapelR/poetry-parser.git"
+  },
+  "keywords": [
+    "poetry",
+    "parser",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/ChapelR/poetry-parser/issues"
+  },
+  "homepage": "https://github.com/ChapelR/poetry-parser#readme",
+  "author": "Chapel",
+  "license": "MIT"
+}
