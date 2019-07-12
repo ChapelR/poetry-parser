@@ -2,7 +2,7 @@
 /* jshint node: true, esversion: 6 */
 
 const yargs = require('yargs'),
-       main = require('../index.js');
+       main = require('../index.js').parseAndSave;
 
 let args = yargs.option('input', {
     describe : 'The file or directory to parse for poems.',

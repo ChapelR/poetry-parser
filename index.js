@@ -5,16 +5,43 @@ const getFiles = require('./lib/get-files.js');
 const parse = require('./lib/parser.js');
 const save = require('./lib/save-as.js');
 
-module.exports = function (input, output) {
+function parsePoetry (text, json) {
     try {
-        const out = parse(getFiles(input));
-        if (output) {
-            save(output, out);
-        } else {
-            console.log(out);
+        let data = parse(text);
+        if (json) {
+            data = JSON.stringify(data, null, 4);
         }
-        return out;
+        return data;
     } catch (err) {
-        console.error(err);
+        console.error(err.message);
     }
+}
+
+function parseFromFile (input, json) {
+    try {
+        let data = parsePoetry(getFiles(input), json);
+        return data;
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+function parseAndSave (input, output) {
+    try {
+        const data = parseFromFile(input);
+        if (output) {
+            save(output, data);
+        } else {
+            console.log(data);
+        }
+        return data;
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+module.exports = {
+    fromString : parse,
+    fromFile : parseFromFile,
+    parseAndSave
 };
