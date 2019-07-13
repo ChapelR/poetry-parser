@@ -4,7 +4,7 @@ const assert = require('assert');
 const main = require('../index.js');
 
 // fromString()
-describe('<poetry>.fromString', function () {
+describe('<poetry>.fromString()', function () {
     const obj = main.fromString("---\n" +
         "poet: Chapel\n" +
         "year: 2019\n" +
@@ -32,7 +32,7 @@ describe('<poetry>.fromString', function () {
 });
 
 // fromFile()
-describe('<poetry>.fromFile', function () {
+describe('<poetry>.fromFile()', function () {
     const poetry = main.fromFile('./test/src/poem.txt');
     it('should parse the file into an array', function () {
         assert.strictEqual(typeof poetry, 'object');
@@ -55,7 +55,7 @@ describe('<poetry>.fromFile', function () {
 });
 
 // parseAndSave()
-describe('<poetry>.parseAndSave', function () {
+describe('<poetry>.parseAndSave()', function () {
     main.parseAndSave('./test/src/poem2.txt', './test/dist/poem.json');
     const poetry = require('./dist/poem.json');
     it('should parse the file into an json file', function () {
@@ -72,5 +72,30 @@ describe('<poetry>.parseAndSave', function () {
     });
     it('not change any of the text outside html entities', function () {
         assert.strictEqual(poetry[0].content[1][1].trim(), 'To stop without a farmhouse near');
+    });
+});
+
+// fileSystemHandling
+describe('file system checks', function () {
+    const poetry = main.fromFile('./test/src/dir');
+    it('should parse poems from both md files and text files in a directory', function () {
+        assert.strictEqual(poetry.length, 2);
+    });
+    it('should produce valid results', function () {
+        assert.ok(poetry.some( (p) => p.data.poet.trim() === 'Ben Jonson'));
+    });
+});
+
+// errors
+describe('Error handling.', function () {
+    //console.log(main.fromFile('./test/src/empty'));
+    it('should recognize and throw on an empty directory', function () {
+        assert.throws(() => main.fromFile('./test/src/empty'));
+    });
+    it('parser should throw an exception when given bad data', function () {
+        assert.throws(() => main.fromText(4));
+    });
+    it('parser should throw an exception when given nonsense file names', function () {
+        assert.throws(() => main.fromFile(13));
     });
 });

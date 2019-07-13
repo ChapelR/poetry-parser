@@ -4,32 +4,35 @@ const getFiles = require('./lib/get-files.js');
 const parse = require('./lib/parser.js');
 const save = require('./lib/save-as.js');
 
-function parsePoetry (text, json) {
+function attempt (fn) {
     try {
+        return fn();
+    } catch (err) {
+        /* istanbul ignore next */
+        throw new Error(err);
+    }
+}
+
+function parsePoetry (text, json) {
+    return attempt( function () {
         let data = parse(text);
         /* istanbul ignore next */
         if (json) {
             data = JSON.stringify(data, null, 4);
         }
         return data;
-    } catch (err) {
-        /* istanbul ignore next */
-        console.error(err.message);
-    }
+    });
 }
 
 function parseFromFile (input, json) {
-    try {
+    return attempt( function () {
         let data = parsePoetry(getFiles(input), json);
         return data;
-    } catch (err) {
-        /* istanbul ignore next */
-        console.error(err.message);
-    }
+    });
 }
 
 function parseAndSave (input, output) {
-    try {
+    return attempt( function () {
         const data = parseFromFile(input);
         /* istanbul ignore else */
         if (output) {
@@ -38,10 +41,7 @@ function parseAndSave (input, output) {
             console.log(data);
         }
         return data;
-    } catch (err) {
-        /* istanbul ignore next */
-        console.error(err.message);
-    }
+    });
 }
 
 module.exports = {
