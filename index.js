@@ -7,11 +7,13 @@ const save = require('./lib/save-as.js');
 function parsePoetry (text, json) {
     try {
         let data = parse(text);
+        /* istanbul ignore next */
         if (json) {
             data = JSON.stringify(data, null, 4);
         }
         return data;
     } catch (err) {
+        /* istanbul ignore next */
         console.error(err.message);
     }
 }
@@ -21,6 +23,7 @@ function parseFromFile (input, json) {
         let data = parsePoetry(getFiles(input), json);
         return data;
     } catch (err) {
+        /* istanbul ignore next */
         console.error(err.message);
     }
 }
@@ -28,6 +31,7 @@ function parseFromFile (input, json) {
 function parseAndSave (input, output) {
     try {
         const data = parseFromFile(input);
+        /* istanbul ignore else */
         if (output) {
             save(output, data);
         } else {
@@ -35,6 +39,7 @@ function parseAndSave (input, output) {
         }
         return data;
     } catch (err) {
+        /* istanbul ignore next */
         console.error(err.message);
     }
 }

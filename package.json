@@ -15,12 +15,15 @@
     "yargs": "^13.2.4"
   },
   "devDependencies": {
+    "coveralls": "^3.0.5",
+    "istanbul": "^0.4.5",
     "jshint": "^2.10.2",
     "mocha": "^6.1.4"
   },
   "scripts": {
     "test": "mocha",
     "test-cli": "npm link && poetry -i test/src -o test/poems.json && npm unlink",
+    "test-travis": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/test.js",
     "lint": "jshint ."
   },
   "repository": {
