@@ -1,6 +1,6 @@
 {
   "name": "poetry-parser",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Parses poetry to JSON.",
   "main": "index.js",
   "bin": {
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "test": "mocha",
+    "test-cli": "npm link && poetry -i test/src -o test/poems.json && npm unlink",
     "lint": "jshint ."
   },
   "repository": {
