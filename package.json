@@ -1,6 +1,6 @@
 {
   "name": "poetry-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parses poetry to JSON.",
   "main": "index.js",
   "bin": {
